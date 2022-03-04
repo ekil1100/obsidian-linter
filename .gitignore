@@ -13,7 +13,7 @@ node_modules
 *.js.map
 
 # obsidian
-data.json
+# data.json
 
 yarn.lock
 
