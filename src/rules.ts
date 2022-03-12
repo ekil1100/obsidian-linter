@@ -267,9 +267,9 @@ export const rules: Rule[] = [
       RuleType.SPACING,
       (text: string) => {
         return ignoreCodeBlocksAndYAML(text, (text) => {
-          text = text.replace(/\n+([a-zA-Z].*)/g, '\n\n$1'); // trim blank lines before
-          text = text.replace(/(^[a-zA-Z].*)\n+/gm, '$1\n\n'); // trim blank lines after
-          text = text.replace(/^\n+([a-zA-Z].*)/, '$1'); // remove blank lines before first line
+          text = text.replace(/\n+([a-zA-Z\u4e00-\u9fa5].*)/g, '\n\n$1'); // trim blank lines before
+          text = text.replace(/(^[a-zA-Z\u4e00-\u9fa5].*)\n+/gm, '$1\n\n'); // trim blank lines after
+          text = text.replace(/^\n+([a-zA-Z\u4e00-\u9fa5].*)/, '$1'); // remove blank lines before first line
           return text;
         });
       },
